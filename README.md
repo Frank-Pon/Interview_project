@@ -25,8 +25,8 @@ User 輸入股票代號 (例:2330 ,就可以查詢到台積電)
 -> 在終端機輸入 python app.py -> 打開網頁輸入 127.0.0.1:5000 -> 開始查詢 ✅
 
 ![畫面截圖](screenshot/app.png)
-![畫面截圖](screenshot/index.png)
 ![畫面截圖](screenshot/web.png)
+![畫面截圖](screenshot/index.png)
 ![畫面截圖](screenshot/search.png)
 ![畫面截圖](screenshot/search_failed.png)
 
