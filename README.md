@@ -21,7 +21,7 @@ User 輸入股票代號 (例:2330 ,就可以查詢到台積電)
 
 使用方法:
 
-(https://github.com/Frank-Pon/Interview_project.git) clone之後 -> 安裝所需套件 ( Flask、Requests、BeautifulSoup )
+( Git Clone用網址 https://github.com/Frank-Pon/Interview_project.git ) clone之後 -> 安裝所需套件 ( Flask、Requests、BeautifulSoup )
 -> 在終端機輸入 python app.py -> 打開網頁輸入 127.0.0.1:5000 -> 開始查詢 ✅
 
 ![畫面截圖](screenshot/app.png)
