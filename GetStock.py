@@ -20,7 +20,7 @@ def get_stock(stock_code):
         #<h1 class="C($c-link-text) Fw(b) Fz(24px) Mend(8px)">台積電</h1>
         #<span class="C($c-icon) Fz(24px) Mend(20px)">2330</span>
         #<span class="Fz(32px) Fw(b) Lh(1) Mend(16px) D(f) Ai(c) C($c-trend-down)">972</span>
-
+        #
         if stock_name and stock_price:
             return {
                 'stock_name':stock_name.text,
