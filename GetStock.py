@@ -14,7 +14,7 @@ def get_stock(stock_code):
         #
 
         stock_name = soup.find('h1',class_='C($c-link-text) Fw(b) Fz(24px) Mend(8px)')
-        stock_price = (soup.find('span',class_='Fz(32px) Fw(b) Lh(1) Mend(16px) D(f) Ai(c) C($c-trend-down)') or soup.find('span',class_='Fz(32px) Fw(b) Lh(1) Mend(16px) D(f) Ai(c) C($c-trend-up)'))
+        stock_price = (soup.find('span',class_='Fz(32px) Fw(b) Lh(1) Mend(16px) D(f) Ai(c) C($c-trend-down)') or soup.find('span',class_='Fz(32px) Fw(b) Lh(1) Mend(16px) D(f) Ai(c) C($c-trend-up)') or soup.find('span',class_='Fz(32px) Fw(b) Lh(1) Mend(16px) D(f) Ai(c)'))
         now = datetime.now().strftime('%Y / %m / %d - %H : %M : %S')
         #
         #<h1 class="C($c-link-text) Fw(b) Fz(24px) Mend(8px)">台積電</h1>
@@ -44,4 +44,4 @@ def get_stock(stock_code):
                 'Error_Message':str(e)
         }
     
-#print(get_stock('00637L'))
+print(get_stock('2330'))
