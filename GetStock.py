@@ -37,10 +37,11 @@ def get_stock(stock_code):
                 'status':'Not found'
             }
     except Exception as e:
+        #print(f'[ERROR] Stock_code：{stock_code} -> {e}')
         return {
                 'stock_num':stock_code,
                 'status':'Error',
                 'Error_Message':str(e)
         }
     
-#print(get_stock(2330))
+#print(get_stock('00637L'))

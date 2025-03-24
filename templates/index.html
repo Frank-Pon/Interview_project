@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <title>股票查詢</title>
+  <meta charset="UTF-8">
+  <title>股票查詢</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input, button {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin-right: 8px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      background-color: #fff;
+      padding: 16px;
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      white-space: pre-wrap;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <h2>輸入代號，查詢股票訊息：</h2>
-    <input type="text" id="codeInput" placeholder="請輸入股票代號">
-    <button onclick="queryAPI()">查詢</button>
-    <pre id="result"></pre>
+  <h2>輸入代號，查詢股票訊息：</h2>
+  <input type="text" id="codeInput" placeholder="請輸入股票代號">
+  <button onclick="queryAPI()">查詢</button>
 
-    <script>
-        async function queryAPI() {
-            const stock_code = document.getElementById("codeInput").value;
-            const response = await fetch(`/stock/${stock_code}`);
-            const data = await response.json();
-            document.getElementById("result").textContent = JSON.stringify(data, null, 2);
-        }
-    </script>
+  <div id="result"></div>
+
+  <script>
+    async function queryAPI() {
+      const code = document.getElementById("codeInput").value.trim();
+      const resultDiv = document.getElementById("result");
+
+      if (!code) {
+        resultDiv.innerHTML = '<span class="error">請輸入股票代號</span>';
+        return;
+      }
+
+      resultDiv.textContent = "查詢中...";
+
+        const response = await fetch(`/stock/${code}`);
+        const data = await response.json();
+
+        if (data.status) {
+          resultDiv.textContent = JSON.stringify(data, null, 2);
+      }
+    }
+  </script>
 </body>
 </html>
