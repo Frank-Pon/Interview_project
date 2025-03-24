@@ -22,13 +22,21 @@ User 輸入股票代號 (例:2330 ,就可以查詢到台積電)
 專案結構:
 
 interview_project
+
         ├─ app.py (主程式)
+
         ├─ GetStock.py (主要應用模組)
+
         ├─ GetStockjson.py (把模組查詢的資料存成json)
+
         ├─ README.md (程式簡介)
+
         ├─ templates
+
         │      └─ index.html (前端首頁)
+
         │
+        
         └─screenshot (畫面截圖 for README)
 
 使用方法:
