@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>股票查詢</title>
+</head>
+<body>
+    <h2>輸入代號，查詢股票訊息：</h2>
+    <input type="text" id="codeInput" placeholder="請輸入股票代號">
+    <button onclick="queryAPI()">查詢</button>
+    <pre id="result"></pre>
+
+    <script>
+        async function queryAPI() {
+            const stock_code = document.getElementById("codeInput").value;
+            const response = await fetch(`/stock/${stock_code}`);
+            const data = await response.json();
+            document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
