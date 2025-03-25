@@ -17,6 +17,7 @@ User 輸入股票代號 (例:2330 ,就可以查詢到台積電)
 ✔️Requests
 ✔️BeautifulSoup
 ✔️json
+✔️render_template
 ✔️HTML/JavaScript
 
 專案結構:
